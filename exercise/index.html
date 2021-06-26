@@ -1,17 +1,104 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Title</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style/style.css">
-        <script src="https://kit.fontawesome.com/c939d0e917.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container home-page">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Title</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/c939d0e917.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container home-page">
+      <div class="navigator-container">
+        <i class="bi bi-twitter" style="font-size: 1.5rem; color: white"></i>
+
+        <div class="navigator__row home">
+          <div class="nav__icon">
+            <i class="bi bi-house-fill"></i>
+          </div>
+          <div class="nav__title">Home</div>
         </div>
-        <script src="js/index.js" async defer></script>
-    </body>
+
+        <div class="navigator__row explore">
+          <div class="nav__icon">
+            <i class="bi bi-hash" style="font-weight: bolder"></i>
+          </div>
+          <div class="nav__title explore">Explore</div>
+        </div>
+
+        <div class="navigator__row profile">
+          <div class="nav__icon">
+            <img
+              class="profile_img"
+              src="https://6.viki.io/image/d7dcd68efa8d4abc93a7355b3f5089e9.jpeg?s=900x600&e=t"
+              alt=""
+            />
+          </div>
+          <div class="nav__title">Profile</div>
+        </div>
+
+        <button type="button" class="tweet__button">Tweets</button>
+      </div>
+
+      <div class="main">
+        <div class="tweets-search-container">
+          <i class="bi bi-search"></i>
+          <input
+            type="text"
+            name="search"
+            id="user-search-input"
+            placeholder="Search Twitter"
+          />
+        </div>
+        <div class="tweets-list">
+          <div class="tweet-container">
+            <div class="tweet-user-info">
+              <img
+                src="https://pyxis.nymag.com/v1/imgs/6fa/2db/55c2f2230acb1120847b83f7c7bc0525d1-profile-movie.rsquare.w1200.jpg"
+                alt=""
+              />
+              <div class="tweet-title-name">
+                <p>William</p>
+                <p style="font-size: 8px">@William</p>
+              </div>
+            </div>
+            <div class="tweet-images-container">
+              <div class="tweet-image"></div>
+            </div>
+            <div class="tweet-text-container">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+            </div>
+            <div class="tweet-date-container">20 Hours ago</div>
+          </div>
+        </div>
+      </div>
+      <div class="tweets-sidebar-container">
+        <div class="tweets-sidebar">
+          <div class="sidebar-content">
+            <h3>Trends for you</h3>
+          </div>
+          <ul>
+            <li>#Coding</li>
+            <li>#Javascript</li>
+            <li>#Python</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/index.js" async defer></script>
+  </body>
 </html>
