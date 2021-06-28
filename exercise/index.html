@@ -52,12 +52,13 @@
 
       <div class="main">
         <div class="tweets-search-container">
-          <i class="bi bi-search"></i>
+          <i class="bi bi-search searchIcon" onclick="getTwitterData()"></i>
           <input
             type="text"
             name="search"
             id="user-search-input"
             placeholder="Search Twitter"
+            onkeyup="onEnter(event)"
           />
         </div>
         <div class="tweets-list">
@@ -83,6 +84,7 @@
             </div>
             <div class="tweet-date-container">20 Hours ago</div>
           </div>
+          
         </div>
       </div>
       <div class="tweets-sidebar-container">

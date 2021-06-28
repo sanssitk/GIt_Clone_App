@@ -64,6 +64,9 @@ body {
 
 
 /* Middle Container */
+.searchIcon {
+    cursor: pointer;
+}
 .main {
     min-width: 45%;
     border-left: 1px solid rgb(47, 51, 54);
