@@ -16,6 +16,7 @@
       src="https://kit.fontawesome.com/c939d0e917.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
   </head>
   <body>
     <div class="container home-page">
@@ -62,6 +63,8 @@
           />
         </div>
         <div class="tweets-list">
+
+
           <div class="tweet-container">
             <div class="tweet-user-info">
               <img
@@ -72,19 +75,69 @@
                 <p>William</p>
                 <p style="font-size: 8px">@William</p>
               </div>
-            </div>
+            </div>           
             <div class="tweet-images-container">
               <div class="tweet-image"></div>
+              <div class="tweet-image"></div>
+              <div class="tweet-image"></div>
+              <div class="tweet-image"></div>              
             </div>
             <div class="tweet-text-container">
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                Hello
               </p>
             </div>
             <div class="tweet-date-container">20 Hours ago</div>
           </div>
-          
+          <div class="tweet-container">
+            <div class="tweet-user-info">
+              <img
+                src="https://pyxis.nymag.com/v1/imgs/6fa/2db/55c2f2230acb1120847b83f7c7bc0525d1-profile-movie.rsquare.w1200.jpg"
+                alt=""
+              />
+              <div class="tweet-title-name">
+                <p>Shaker</p>
+                <p style="font-size: 8px">@William</p>
+              </div>
+            </div>           
+            <div class="tweet-images-container">
+              <div class="tweet-image"></div>
+              <div class="tweet-image"></div>                      
+            </div>
+            <div class="tweet-text-container">
+              <p>
+                Hello
+              </p>
+            </div>
+            <div class="tweet-date-container">20 Hours ago</div>
+          </div>
+          <div class="tweet-container">
+            <div class="tweet-user-info">
+              <img
+                src="https://pyxis.nymag.com/v1/imgs/6fa/2db/55c2f2230acb1120847b83f7c7bc0525d1-profile-movie.rsquare.w1200.jpg"
+                alt=""
+              />
+              <div class="tweet-title-name">
+                <p>William</p>
+                <p style="font-size: 8px">@William</p>
+              </div>
+            </div>           
+            <div class="tweet-video-container">
+              <video control>
+                <source src="https://video.twimg.com/ext_tw_video/1410893502737616898/pu/vid/640x360/VAyzp0qCVvanCAFj.mp4?tag=12" type="video/mp4"></source>
+              </video>
+            </div>
+            <div class="tweet-text-container">
+              <p>
+                Hello
+              </p>
+            </div>
+            <div class="tweet-date-container">20 Hours ago</div>
+          </div>
+
+
+
+
         </div>
       </div>
       <div class="tweets-sidebar-container">
@@ -93,9 +146,9 @@
             <h3>Trends for you</h3>
           </div>
           <ul>
-            <li>#Coding</li>
-            <li>#Javascript</li>
-            <li>#Python</li>
+            <li onclick="selectTrend(this)">#Coding</li>
+            <li onclick="selectTrend(this)">#Javascript</li>
+            <li onclick="selectTrend(this)">#Python</li>
           </ul>
         </div>
       </div>
