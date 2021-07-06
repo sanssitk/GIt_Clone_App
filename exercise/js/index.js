@@ -33,6 +33,7 @@ const getTwitterData = (nextPage = false) => {
     .then((twittes) => {
       buildTweets(twittes.statuses, nextPage);
       saveNextPage(twittes.search_metadata);
+      nextPageButtonVisibility(twittes.search_metadata);
     });
 };
 
@@ -58,7 +59,13 @@ const selectTrend = (e) => {
 /**
  * Set the visibility of next page based on if there is data on next page
  */
-const nextPageButtonVisibility = (metadata) => {};
+const nextPageButtonVisibility = (metadata) => {
+  if (metadata.next_results) {
+    document.querySelector(".next-page-container").style.visibility = "visible";
+  } else {
+    document.querySelector(".next-page-container").style.visibility = "hidden";
+  }
+};
 
 /**
  * Build Tweets HTML based on Data from API
@@ -95,7 +102,9 @@ const buildTweets = (tweets, nextPage) => {
           `;
   });
   if (nextPage) {
-    document.querySelector(".tweets-list").insertAdjacentHTML("beforeend", tweetContainer);
+    document
+      .querySelector(".tweets-list")
+      .insertAdjacentHTML("beforeend", tweetContainer);
   } else {
     document.querySelector(".tweets-list").innerHTML = tweetContainer;
   }
