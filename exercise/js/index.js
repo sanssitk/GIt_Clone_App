@@ -1,33 +1,51 @@
 const URL = "http://localhost:3000/tweets";
 
+let nextPageUrl = null;
+
 const onEnter = (e) => {
   if (e.key == "Enter") {
     getTwitterData();
   }
 };
 
+const onNextPage = () => {
+  if (nextPageUrl) {
+    getTwitterData(true);
+  }
+};
+
 /**
  * Retrive Twitter Data from API
  */
-const getTwitterData = () => {
+const getTwitterData = (nextPage = false) => {
   const count = 10;
   const query = document.getElementById("user-search-input").value;
   if (!query) return;
   const encodedQuery = encodeURIComponent(query);
-  const url = `${URL}?q=${encodedQuery}&count=${count}`;
+  let url = `${URL}?q=${encodedQuery}&count=${count}`;
+  if (nextPage && nextPageUrl) {
+    url = nextPageUrl;
+  }
   fetch(url)
     .then((res) => {
       return res.json();
     })
     .then((twittes) => {
-      buildTweets(twittes.statuses, count);
+      buildTweets(twittes.statuses, nextPage);
+      saveNextPage(twittes.search_metadata);
     });
 };
 
 /**
  * Save the next page data
  */
-const saveNextPage = (metadata) => {};
+const saveNextPage = (metadata) => {
+  if (metadata.next_results) {
+    nextPageUrl = `${URL}${metadata.next_results}`;
+  } else {
+    nextPageUrl = null;
+  }
+};
 
 /**
  * Handle when a user clicks on a trend
@@ -76,7 +94,11 @@ const buildTweets = (tweets, nextPage) => {
     </div>
           `;
   });
-  document.querySelector(".tweets-list").innerHTML = tweetContainer;
+  if (nextPage) {
+    document.querySelector(".tweets-list").insertAdjacentHTML("beforeend", tweetContainer);
+  } else {
+    document.querySelector(".tweets-list").innerHTML = tweetContainer;
+  }
 };
 
 /**
